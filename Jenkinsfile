@@ -22,9 +22,7 @@ pipeline {
         }
         stage("build image") {
             steps {
-                script {
-                    gv.buildImage()
-                }
+                sh 'docker build -t awaiskhurshid/java-maven-app:jma-3.0 .'
             }
         }
         stage("deploy") {
